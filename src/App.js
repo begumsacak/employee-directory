@@ -1,24 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
-import './App.css';
-
+//import './App.css';
+import Table from "./components/Table"
+import Search from "./components/Search"
+import api from "./utils/api"
 function App() {
+
+  const [employee, setEmployee] = useState({
+    results: [],
+    search: ""
+  })
+  // every time we want to update a variable, useEffect will run
+  useEffect(() => {
+    api.randomPeople()
+    .then(employees=> {
+       setEmployee({
+        // spread operator: includes results and search - before every update, we need to preserve the properties
+         ...employee,
+         // results from the API
+         results: employees.data.results
+       })
+    })
+  }, [])
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {console.log(employee.results)}
+      <Search/>
+      <Table employees={employee.results} />
     </div>
   );
 }
