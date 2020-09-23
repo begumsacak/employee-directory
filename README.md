@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Please see the [Deployed Heroku App] (https://calm-bastion-76365.herokuapp.com/) - I followed instructions on [deploying to Heroku from this resource] (https://blog.heroku.com/deploying-react-with-zero-configuration)
+
 ## Available Scripts
 
 In the project directory, you can run:
