@@ -8,7 +8,7 @@ function Search(props) {
             <div className="col-sm-12 text-center">
                 <form onSubmit={props.handleSubmit}>
                     <input type="search" onChange={props.handleInputChange} />
-                    <button type="submit">Search</button>
+                    <button type="submit" className="btn btn-info">Search</button>
                 </form>
             </div>
             <br></br>
