@@ -1,9 +1,8 @@
 import axios from "axios";
 
 
-export default { 
-     randomPeople: function() {
-       return axios.get("https://randomuser.me/api/?results=50")
+export default {
+  randomPeople: function () {
+    return axios.get("https://randomuser.me/api/?results=50")
      }
-     
 }

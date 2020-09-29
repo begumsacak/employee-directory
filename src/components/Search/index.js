@@ -6,14 +6,15 @@ function Search(props) {
         <div className="Search">
             <h1 className="text-center text-info">Search for an employee</h1>
             <div className="col-sm-12 text-center">
-                <input placeholder="Search" />
+                <form onSubmit={props.handleSubmit}>
+                    <input type="search" onChange={props.handleInputChange} />
+                    <button type="submit">Search</button>
+                </form>
             </div>
             <br></br>
         </div>
 
     )
 }
-
-
 
 export default Search 
